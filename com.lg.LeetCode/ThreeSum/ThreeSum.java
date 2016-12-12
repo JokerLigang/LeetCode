@@ -28,6 +28,7 @@ public class ThreeSum {
                 for (int i = first + 1; i < end; i++) {
                     if (sum + nums[i] == 0) {
                         result.add(Arrays.asList(nums[first], nums[i], nums[end]));
+                        break;
                     }
                 }
 
@@ -51,7 +52,7 @@ public class ThreeSum {
 
     public static void main(String[] args) {
 
-        List<List<Integer>> lists = new ThreeSum().threeSum(new int[]{-1, 0, 1, 2, -1, -4});
+        List<List<Integer>> lists = new ThreeSum().threeSum(new int[]{0,0,0,0});
         for (Object o : lists.toArray()) {
             System.out.println(o);
         }
