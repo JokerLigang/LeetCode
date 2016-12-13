@@ -1,3 +1,4 @@
+import java.util.Arrays;
 
 /**
  * Created by joker on 2016/12/13.
@@ -8,6 +9,8 @@ public class ThreeSumClosest {
     public int threeSumClosest(int[] nums, int target) {
 
         if(nums.length<3) return 0;
+
+        Arrays.sort(nums);
 
         int closest = nums[0]+nums[1]+nums[2];
 
@@ -20,7 +23,7 @@ public class ThreeSumClosest {
 
                 for (int i = first+1;i<end;i++){
 
-                    if(Math.abs(target-sum)< Math.abs(target-closest)){
+                    if(Math.abs(target-nums[i]-sum)< Math.abs(target-closest)){
                         closest = sum+nums[i];
                     }
                 }
@@ -45,7 +48,7 @@ public class ThreeSumClosest {
 
 
     public static void main(String[] args) {
-        System.out.println(new ThreeSumClosest().threeSumClosest(new int[]{-1,2,1,-4},1));
+        System.out.println(new ThreeSumClosest().threeSumClosest(new int[]{1,1,1,0},100));
     }
 
 }
